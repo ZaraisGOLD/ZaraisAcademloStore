@@ -40,8 +40,8 @@ function printProducts(dataBase) {
                     <img src="${image}" alt="">
                 </div>
                 <div class="product__data">
-                    <i class='bx bx-plus' id='${id}'></i>
-                    <h3>$${price}.00<span>Stock: ${quantity}</span></h3>
+                    ${quantity ? `<i class='bx bx-plus' id='${id}'></i>` : ``}
+                    <h3>$${price}.00<span>${quantity ? `Stock: ${quantity}` : `<span class='soldOut'>Sold Out</span>`}</span></h3>
                     <p>${name}</p>
                 </div>
             </div>
@@ -169,6 +169,43 @@ function printTotalCart(dataBase) {
     totalBuy.textContent = '$' + amountProduts + '.00';
 }
 
+function handleTotal(dataBase) {
+    const btnBuy = document.querySelector('.btn__buy');
+
+    btnBuy.addEventListener('click', function () {
+
+        if (!Object.values(dataBase.cart).length)
+            return alert('No hay productos en el carrito');
+
+        const response = confirm('¿Seguro que quieres hacer la compra?');
+        if (!response) return;
+
+        const currentProducts = [];
+
+        for (const product of dataBase.products) {
+            const productCart = dataBase.cart[product.id];
+            if (product.id === productCart?.id) {
+                currentProducts.push({
+                    ...product,
+                    quantity: product.quantity - productCart.amount,
+                });
+            } else {
+                currentProducts.push(product);
+            }
+        }
+
+        dataBase.products = currentProducts;
+        dataBase.cart = {};
+
+        localStorage.setItem('products', JSON.stringify(dataBase.products));
+        localStorage.setItem('cart', JSON.stringify(dataBase.cart));
+
+        printTotalCart(dataBase);
+        printProductsCart(dataBase);
+        printProducts(dataBase);
+    });
+}
+
 async function main() {
     const dataBase = {
         products: JSON.parse(localStorage.getItem('products')) || (await getProducts()),
@@ -183,8 +220,7 @@ async function main() {
     printProductsCart(dataBase);
     handleCart(dataBase);
     printTotalCart(dataBase);
-
-
+    handleTotal(dataBase);
 
 }
 

@@ -84,7 +84,7 @@ body {
 .navbar__logo span {
     color: var(--title-color);
     font-weight: 500;
-    
+
 }
 
 .navbar__menu {
@@ -135,7 +135,7 @@ body {
     top: 0.5rem;
     right: 0.5rem;
     position: absolute;
-    
+
 }
 
 .cart__show {
@@ -204,7 +204,7 @@ body {
     cursor: pointer;
 }
 
-.itemProduct__op .bx-trash{
+.itemProduct__op .bx-trash {
     padding-left: 1rem;
     color: var(--first-color);
 }
@@ -216,8 +216,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     padding: 1rem;
-    background-color: blue;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .cart__total--info {
@@ -332,8 +331,22 @@ body {
     padding-left: 1rem;
 }
 
+.product__data h3 {
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.2rem;
+}
+
 .product__data p {
     font-weight: 500;
+}
+
+.product__data .soldOut {
+    color: var(--title-color);
+    background-color: var(--first-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    user-select: none;
 }
 
 
@@ -360,6 +373,7 @@ body {
 
 
 
+
 /**/
 
 
@@ -368,7 +382,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 5rem 2rem; 
+    padding: 5rem 2rem;
     gap: 1.5rem;
 }
 
@@ -427,4 +441,3 @@ body {
 .bxl-netlify {
     cursor: pointer;
 }
-
