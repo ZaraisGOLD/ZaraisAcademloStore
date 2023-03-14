@@ -122,7 +122,7 @@ body {
     right: -100%;
     z-index: 3;
     display: grid;
-    grid-template-rows: 80% 20%;
+    grid-template-rows: 75% 25%;
     padding: 2rem 1rem 1rem;
     transition: right 0.5s;
     position: fixed;
@@ -212,10 +212,34 @@ body {
 .card__total {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
     padding: 1rem;
     background-color: blue;
     /* overflow: hidden; */
+}
+
+.cart__total--info {
+    background-color: red;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn__buy {
+    background-color: var(--button-color);
+    color: #ffffff;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    padding: 1rem 0;
+    font-weight: 700;
+    transition: background-color 0.5s;
+}
+
+.btn__buy:hover {
+    background-color: var(--first-color);
 }
 
 
