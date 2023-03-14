@@ -111,6 +111,23 @@ body {
     gap: 0.5rem;
     font-size: 21px;
     cursor: pointer;
+    position: relative;
+}
+
+.products__amount {
+    font-size: 0.6rem;
+    background-color: var(--title-color);
+    color: var(--card-color);
+    display: inline-block;
+    border-radius: 50%;
+    width: 21px;
+    height: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 24px;
+    top: 0.7rem;
 }
 
 .cart {

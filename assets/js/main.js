@@ -119,6 +119,7 @@ function addCartFromProducts(dataBase) {
             localStorage.setItem('cart', JSON.stringify(dataBase.cart));
             printProductsCart(dataBase);
             printTotalCart(dataBase);
+            handlePrintAmountProducts(dataBase);
         }
     });
 }
@@ -149,6 +150,7 @@ function handleCart(dataBase) {
         localStorage.setItem('cart', JSON.stringify(dataBase.cart));
         printProductsCart(dataBase);
         printTotalCart(dataBase);
+        handlePrintAmountProducts(dataBase);
     });
 }
 
@@ -203,7 +205,20 @@ function handleTotal(dataBase) {
         printTotalCart(dataBase);
         printProductsCart(dataBase);
         printProducts(dataBase);
+        handlePrintAmountProducts(dataBase);
     });
+}
+
+function handlePrintAmountProducts(dataBase) {
+    const productsAmount = document.querySelector('.products__amount');
+
+    let amount = 0;
+
+    for (const product in dataBase.cart) {
+        amount += dataBase.cart[product].amount;
+    }
+
+    productsAmount.textContent = amount
 }
 
 async function main() {
@@ -221,7 +236,7 @@ async function main() {
     handleCart(dataBase);
     printTotalCart(dataBase);
     handleTotal(dataBase);
-
+    handlePrintAmountProducts(dataBase);
 }
 
 main()
