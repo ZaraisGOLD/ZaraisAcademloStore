@@ -41,7 +41,8 @@ function printProducts(dataBase) {
                 </div>
                 <div class="product__data">
                     ${quantity ? `<i class='bx bx-plus' id='${id}'></i>` : ``}
-                    <h3>$${price}.00<span>${quantity ? `Stock: ${quantity}` : `<span class='soldOut'>Sold Out</span>`}</span></h3>
+                    <h3>$${price}.00<span>${quantity ? `Stock: ${quantity}` 
+                    : `<span class='soldOut'>Sold Out</span>`}</span></h3>
                     <p>${name}</p>
                 </div>
             </div>
