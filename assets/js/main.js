@@ -221,6 +221,37 @@ function handlePrintAmountProducts(dataBase) {
     productsAmount.textContent = amount
 }
 
+function handleNavbar() {
+    const iconMenu = document.querySelector(".bxs-dashboard");
+    const menu = document.querySelector(".navbar__menu");
+
+    iconMenu.addEventListener('click', function () {
+        menu.classList.toggle('menu__show');
+    });
+}
+
+// function handleCloseMenu() {
+//     const iconMenu = document.querySelector('.bxs-dashboard');
+//     const iconMenuCloseHTML = document.querySelector('.bx-x');
+
+//     iconMenu.addEventListener('click', function () {
+//         cartHTML.classList.toggle('cart__show');
+//     });
+// }
+
+
+function transitionNavbar() {
+    const navbar = document.querySelector('.header__container')
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 150) {
+            navbar.classList.add('navbar__active');
+        } else {
+            navbar.classList.remove('navbar__active');
+        }
+    });
+}
+
 async function main() {
     const dataBase = {
         products: JSON.parse(localStorage.getItem('products')) || (await getProducts()),
@@ -237,6 +268,8 @@ async function main() {
     printTotalCart(dataBase);
     handleTotal(dataBase);
     handlePrintAmountProducts(dataBase);
+    handleNavbar();
+    transitionNavbar();
 }
 
 main()
