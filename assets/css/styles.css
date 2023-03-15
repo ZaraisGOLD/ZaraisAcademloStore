@@ -37,7 +37,6 @@ img {
 }
 
 html {
-    background-color: var(--body-color);
     scroll-behavior: smooth;
 }
 
@@ -49,6 +48,16 @@ html ::-webkit-scrollbar-thumb {
     background-color: var(--first-color);
     border-radius: 20px;
 }
+
+body {
+    background-color: var(--body-color);
+}
+
+/* body.darkmode { 
+    background-color: var(--button-color);
+} */
+
+
 
 .header__container {
     background-color: transparent;
@@ -97,8 +106,9 @@ html ::-webkit-scrollbar-thumb {
     position: fixed;
     top: 0;
     right: 0;
-    width: 40%;
-    height: 80vh;
+    width: 50%;
+    height: 50vh;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,6 +117,7 @@ html ::-webkit-scrollbar-thumb {
     padding-top: 20px;
     transition: right 0.5s;
     border-bottom-left-radius: 1rem;
+    box-shadow: var(--shadow-general);
 }
 
 .menu__show {
@@ -160,7 +171,7 @@ html ::-webkit-scrollbar-thumb {
     right: -100%;
     z-index: var(--zi-cart);
     display: grid;
-    grid-template-rows: 75% 25%;
+    grid-template-rows: 80% 20%;
     padding: 2rem 1rem 1rem;
     transition: right 0.5s;
     position: fixed;
@@ -495,6 +506,9 @@ html ::-webkit-scrollbar-thumb {
         justify-content: flex-start;
         gap: 1rem;
         padding-left: 2rem;
+        min-height: 0;
+        box-shadow: none;
+        padding-top: 0px;
     }
 
     .navbar__menu a {
@@ -542,7 +556,7 @@ html ::-webkit-scrollbar-thumb {
         padding: 5rem 4rem 3rem 3rem;
     }
 
-    .footer__content div:nth-child(4) {
+    .footer__content div:nth-child(3) {
         align-self: center;
     }
 
