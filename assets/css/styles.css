@@ -498,6 +498,15 @@ html ::-webkit-scrollbar-thumb {
         font-weight: bold;
     }
 
+    .navbar__icons {
+        right: -35px ;
+    }
+
+    .navbar__icons i:nth-child(3) {
+        color: transparent;
+        cursor: none;
+    }
+
     .cart {
         width: 450px;
     }
@@ -510,11 +519,12 @@ html ::-webkit-scrollbar-thumb {
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
-        height: 80vh;
+        min-height: 80vh;
     }
 
     .home__body {
         justify-content: center;
+        min-height: 500px;
     }
 
     .home__body h2 {
@@ -551,5 +561,4 @@ html ::-webkit-scrollbar-thumb {
         align-items: center;
         gap: 1rem;
     }
-
 }

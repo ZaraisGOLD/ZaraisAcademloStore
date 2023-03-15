@@ -252,6 +252,7 @@ function transitionNavbar() {
     });
 }
 
+
 async function main() {
     const dataBase = {
         products: JSON.parse(localStorage.getItem('products')) || (await getProducts()),
