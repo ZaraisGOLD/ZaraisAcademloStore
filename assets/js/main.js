@@ -300,7 +300,6 @@ async function main() {
 
     printProducts(dataBase);
     handleShowCart();
-    handleCloseCart();
     addCartFromProducts(dataBase);
     printProductsCart(dataBase);
     handleCart(dataBase);
@@ -311,6 +310,7 @@ async function main() {
     transitionNavbar();
     handleDarkMode();
     handleFilters();
+    handleCloseCart();
 }
 
 main()
