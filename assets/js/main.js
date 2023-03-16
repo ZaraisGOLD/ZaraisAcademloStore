@@ -250,6 +250,7 @@ function handleTotal(dataBase) {
         printProductsCart(dataBase);
         printProducts(dataBase);
         handlePrintAmountProducts(dataBase);
+        handleFilters();
     });
 }
 
