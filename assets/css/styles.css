@@ -411,6 +411,11 @@ body.dark__mode {
     padding: 1rem;
 }
 
+.products img:hover{
+    transform: translateY(-10px);
+    transition-duration: 0.5s;
+}
+
 .product__data {
     background-color: var(--container-color);
     color: var(--title-color);
