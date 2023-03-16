@@ -53,9 +53,9 @@ body {
     background-color: var(--body-color);
 }
 
-body.dark__mode { 
+/* body.dark__mode { 
     background-color: var(--button-color);
-}
+} */
 
 .header__container {
     background-color: transparent;
@@ -358,6 +358,28 @@ body.dark__mode {
 
 /**/
 
+.filters {
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+    gap: 1rem;    
+}
+
+.btn__filter {
+    color: var(--text-color);
+    font-weight: 700;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    padding: 20px 25px;
+    cursor: pointer;
+}
+
+.btn__filter--active {
+    background-color: var(--button-color);
+    color: var(--container-color);
+}
+
 .products__content {
     padding: 1rem;
 }
@@ -369,7 +391,6 @@ body.dark__mode {
     overflow: hidden;
     padding: 0 2rem;
 }
-
 
 .product__img {
     background-color: var(--card-color);
@@ -529,10 +550,6 @@ body.dark__mode {
 
     .cart {
         width: 400px;
-    }
-
-    .main__container {
-        gap: 3rem;
     }
 
     .home__content {

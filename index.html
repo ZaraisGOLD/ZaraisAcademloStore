@@ -11,6 +11,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="./assets/js/mixitup.min.js" defer></script>
     <script src="./assets/js/main.js" defer></script>
 </head>
 
@@ -57,6 +58,12 @@
         </section>
 
         <section class="products__content" id="products">
+            <div class="filters">
+                <button class="btn__filter btn__filter--active" data-filter="all">Show All</button>
+                <button class="btn__filter" data-filter=".shirt">Shirt</button>
+                <button class="btn__filter" data-filter=".hoddie">Hoddie</button>
+                <button class="btn__filter" data-filter=".sweater">Sweater</button>
+            </div>
             <div class="products"></div>
         </section>
     </main>

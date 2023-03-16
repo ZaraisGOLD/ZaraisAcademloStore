@@ -282,6 +282,15 @@ async function main() {
     handleNavbar();
     transitionNavbar();
     handleDarkMode();
+
+    mixitup(".products", {
+        selectors: {
+            target: ".product",
+        },
+        animation: {
+            duration: 300
+        }
+    });
 }
 
 main()
