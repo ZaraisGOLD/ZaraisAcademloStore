@@ -298,19 +298,19 @@ async function main() {
         cart: JSON.parse(localStorage.getItem('cart')) || {},
     };
 
+    transitionNavbar();
+    handleNavbar();
+    handleDarkMode();
     printProducts(dataBase);
     handleShowCart();
+    handleCloseCart();
     addCartFromProducts(dataBase);
     printProductsCart(dataBase);
     handleCart(dataBase);
     printTotalCart(dataBase);
     handleTotal(dataBase);
     handlePrintAmountProducts(dataBase);
-    handleNavbar();
-    transitionNavbar();
-    handleDarkMode();
     handleFilters();
-    handleCloseCart();
 }
 
 main()
