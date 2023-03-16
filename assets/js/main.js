@@ -32,17 +32,17 @@ function printProducts(dataBase) {
 
     let html = '';
 
-    dataBase.products.forEach(({ id, image, name, price, quantity }) => {
+    dataBase.products.forEach(({ id, image, name, price, quantity, category }) => {
 
         html += `
-            <div class="product">
+            <div class="product ${category}">
                 <div class="product__img">
                     <img src="${image}" alt="">
                 </div>
                 <div class="product__data">
                     ${quantity ? `<i class='bx bx-plus' id='${id}'></i>` : ``}
-                    <h3>$${price}.00<span>${quantity ? `Stock: ${quantity}` 
-                    : `<span class='soldOut'>Sold Out</span>`}</span></h3>
+                    <h3>$${price}.00<span>${quantity ? `Stock: ${quantity}`
+                : `<span class='soldOut'>Sold Out</span>`}</span></h3>
                     <p>${name}</p>
                 </div>
             </div>
@@ -232,14 +232,11 @@ function handleNavbar() {
 }
 
 function handleDarkMode() {
-    const navbarIcons = document.querySelector('.navbar__icons');
     const iconDarkMode = document.querySelector('.bx-moon');
-
+    const darkModeHTML = document.querySelector('.dark__mode');
 
     iconDarkMode.addEventListener('click', function () {
-        
-
-        darkMode.classList.toggle('darkmode');
+        darkModeHTML.classList.toggle('dark__mode');
     });
 }
 
@@ -284,6 +281,7 @@ async function main() {
     handlePrintAmountProducts(dataBase);
     handleNavbar();
     transitionNavbar();
+    handleDarkMode();
 }
 
 main()
