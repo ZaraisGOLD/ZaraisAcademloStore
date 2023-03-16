@@ -7,6 +7,52 @@ async function getProducts() {
     return res;
 }
 
+function transitionNavbar() {
+    const navbar = document.querySelector('.header__container')
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+            navbar.classList.add('navbar__active');
+        } else {
+            navbar.classList.remove('navbar__active');
+        }
+    });
+}
+
+function handleNavbar() {
+    const menu = document.querySelector(".navbar__menu");
+    const iconMenu = document.querySelector(".bxs-dashboard");
+
+    iconMenu.addEventListener('click', function () {
+        menu.classList.toggle('menu__show');
+    });
+}
+
+function handleDarkMode() {
+    const iconDarkMode = document.querySelector('.bx-moon');
+    const iconLightMode = document.querySelector('.bx-sun');
+    
+    iconDarkMode.addEventListener('click', function () {
+        if (document.body.classList.toggle('dark__mode')) {
+            const iconAdd = document.getElementById("add");
+            iconAdd.style.display = "none";
+
+            const iconRemove = document.getElementById("remove");
+            iconRemove.style.display = "inline-block";
+        }
+    })
+
+    iconLightMode.addEventListener('click', function () {
+        if (!document.body.classList.toggle('dark__mode')) {
+            const iconRemove = document.getElementById("remove");
+            iconRemove.style.display = "none";
+
+            const iconAdd = document.getElementById("add");
+            iconAdd.style.display = "inline-block";
+        }
+    })
+}
+
 function deleteProducts(dataBase, idProduct) {
     const res = confirm('¿Seguro quieres eliminar producto del carrito?')
     if (!res) return;
@@ -91,10 +137,7 @@ function handleShowCart() {
     iconCartHTML.addEventListener('click', function () {
         cartHTML.classList.toggle('cart__show');
     });
-}
 
-function handleCloseCart() {
-    const cartHTML = document.querySelector('.cart');
     const iconCartCloseHTML = document.querySelector('.bx-x');
 
     iconCartCloseHTML.addEventListener('click', function () {
@@ -222,52 +265,6 @@ function handlePrintAmountProducts(dataBase) {
     productsAmount.textContent = amount
 }
 
-function handleNavbar() {
-    const iconMenu = document.querySelector(".bxs-dashboard");
-    const menu = document.querySelector(".navbar__menu");
-
-    iconMenu.addEventListener('click', function () {
-        menu.classList.toggle('menu__show');
-    });
-}
-
-function handleDarkMode() {
-    const iconDarkMode = document.querySelector('.bx-moon');
-    const iconLightMode = document.querySelector('.bx-sun');
-    
-    iconDarkMode.addEventListener('click', function () {
-        if (document.body.classList.toggle('dark__mode')) {
-            const iconAdd = document.getElementById("add");
-            iconAdd.style.display = "none";
-
-            const iconRemove = document.getElementById("remove");
-            iconRemove.style.display = "inline-block";
-        }
-    })
-
-    iconLightMode.addEventListener('click', function () {
-        if (!document.body.classList.toggle('dark__mode')) {
-            const iconRemove = document.getElementById("remove");
-            iconRemove.style.display = "none";
-
-            const iconAdd = document.getElementById("add");
-            iconAdd.style.display = "inline-block";
-        }
-    })
-}
-
-function transitionNavbar() {
-    const navbar = document.querySelector('.header__container')
-
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) {
-            navbar.classList.add('navbar__active');
-        } else {
-            navbar.classList.remove('navbar__active');
-        }
-    });
-}
-
 function handleFilters() {
     const filtersHTML = document.querySelectorAll('.filters .btn__filter');
 
@@ -303,7 +300,6 @@ async function main() {
     handleDarkMode();
     printProducts(dataBase);
     handleShowCart();
-    handleCloseCart();
     addCartFromProducts(dataBase);
     printProductsCart(dataBase);
     handleCart(dataBase);
