@@ -526,7 +526,6 @@ body.dark__mode {
 }
 
 @media (min-width: 700px) {
-
     .navbar__menu {
         position: static;
         background-color: transparent;
