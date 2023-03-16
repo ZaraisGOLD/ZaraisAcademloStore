@@ -233,22 +233,28 @@ function handleNavbar() {
 
 function handleDarkMode() {
     const iconDarkMode = document.querySelector('.bx-moon');
-    const darkModeHTML = document.querySelector('.dark__mode');
+    const iconLightMode = document.querySelector('.bx-sun');
 
     iconDarkMode.addEventListener('click', function () {
-        darkModeHTML.classList.toggle('dark__mode');
-    });
+        if (document.body.classList.toggle('dark__mode')) {
+            const iconAdd = document.getElementById("add");
+            iconAdd.style.display = "none";
+
+            const iconRemove = document.getElementById("remove");
+            iconRemove.style.display = "inline-block";
+        }
+
+    })
+    iconLightMode.addEventListener('click', function () {
+        if (!document.body.classList.toggle('dark__mode')) {
+            const iconRemove = document.getElementById("remove");
+            iconRemove.style.display = "none";
+
+            const iconAdd = document.getElementById("add");
+            iconAdd.style.display = "inline-block";
+        }
+    })
 }
-
-// function handleCloseMenu() {
-//     const iconMenu = document.querySelector('.bxs-dashboard');
-//     const iconMenuCloseHTML = document.querySelector('.bx-x');
-
-//     iconMenu.addEventListener('click', function () {
-//         cartHTML.classList.toggle('cart__show');
-//     });
-// }
-
 
 function transitionNavbar() {
     const navbar = document.querySelector('.header__container')
@@ -262,6 +268,28 @@ function transitionNavbar() {
     });
 }
 
+function handleFilters() {
+    const filtersHTML = document.querySelectorAll('.filters .btn__filter');
+
+    filtersHTML.forEach((filter) => {
+        filter.addEventListener('click', (e) => {
+            filtersHTML.forEach(filter =>
+                filter.classList.remove('btn__filter--active')
+            );
+
+            e.target.classList.add('btn__filter--active');
+        });
+    });
+
+    mixitup(".products", {
+        selectors: {
+            target: ".product",
+        },
+        animation: {
+            duration: 300
+        }
+    });
+}
 
 async function main() {
     const dataBase = {
@@ -282,15 +310,7 @@ async function main() {
     handleNavbar();
     transitionNavbar();
     handleDarkMode();
-
-    mixitup(".products", {
-        selectors: {
-            target: ".product",
-        },
-        animation: {
-            duration: 300
-        }
-    });
+    handleFilters();
 }
 
 main()
