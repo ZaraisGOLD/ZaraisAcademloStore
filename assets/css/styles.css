@@ -370,7 +370,8 @@ body {
 }
 
 .filters {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
     justify-content: center;
     padding: 4rem;
     gap: 1rem;
@@ -574,6 +575,10 @@ body {
 
     .home__body h2 {
         font-size: 50px;
+    }
+
+    .filters {
+        display: flex;
     }
 
     .footer__content {

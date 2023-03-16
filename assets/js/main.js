@@ -234,7 +234,7 @@ function handleNavbar() {
 function handleDarkMode() {
     const iconDarkMode = document.querySelector('.bx-moon');
     const iconLightMode = document.querySelector('.bx-sun');
-
+    
     iconDarkMode.addEventListener('click', function () {
         if (document.body.classList.toggle('dark__mode')) {
             const iconAdd = document.getElementById("add");
@@ -243,8 +243,8 @@ function handleDarkMode() {
             const iconRemove = document.getElementById("remove");
             iconRemove.style.display = "inline-block";
         }
-
     })
+
     iconLightMode.addEventListener('click', function () {
         if (!document.body.classList.toggle('dark__mode')) {
             const iconRemove = document.getElementById("remove");
