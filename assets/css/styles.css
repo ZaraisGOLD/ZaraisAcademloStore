@@ -571,6 +571,7 @@ body.dark__mode {
     .home__body {
         justify-content: center;
         min-height: 500px;
+        padding: 0 2rem;
     }
 
     .home__body h2 {
