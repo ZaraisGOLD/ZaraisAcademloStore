@@ -9,7 +9,8 @@
     --body-color: hsl(206, 4%, 97%);
     --container-color: hsl(0, 0%, 100%);
     --border-color: hsl(0, 0%, 94%);
-    --shadow-general: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    --shadow-general: 0 0.5rem 1rem rgba(0, 0, 0, .15);
+    --shadow-dash: 0 0.5rem 0.7rem 0.7rem rgba(0, 0, 0, .15);
     --h-header: 3rem;
     --zi-header: 1;
     --zi-cart: 3
@@ -63,6 +64,8 @@ body.dark__mode {
     --body-color: hsl(249, 19%, 14%);
     --container-color: hsl(246, 16%, 12%);
     --border-color: hsl(0, 0%, 20%);
+    --shadow-general: 0 0.5rem 1rem rgba(255, 255, 255, 0.15);
+    --shadow-dash: 0 0.5rem 0.7rem 0.7rem rgba(245, 241, 241, 0.15);
 }
 
 .header__container {
@@ -123,7 +126,7 @@ body.dark__mode {
     padding-top: 20px;
     transition: right 0.5s;
     border-bottom-left-radius: 1rem;
-    box-shadow: var(--shadow-general);
+    box-shadow: var(--shadow-dash);
 }
 
 .bx-sun {
