@@ -13,7 +13,7 @@
     --shadow-dash: 0 0.5rem 0.7rem 0.7rem rgba(0, 0, 0, .15);
     --h-header: 3rem;
     --zi-header: 1;
-    --zi-cart: 3
+    --zi-cart: 3;
 }
 
 * {
@@ -371,7 +371,7 @@ body.dark__mode {
 
 .filters {
     display: grid;
-    grid-template-columns: repeat(2 , 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     padding: 4rem;
     gap: 1rem;
@@ -411,11 +411,11 @@ body.dark__mode {
     padding: 1rem;
 }
 
-.products img{
+.products img {
     transition-duration: 0.5s;
 }
 
-.products img:hover{
+.products img:hover {
     transform: translateY(-10px);
     transition-duration: 0.5s;
 }
@@ -536,6 +536,40 @@ body.dark__mode {
 
 .bxl-netlify {
     cursor: pointer;
+}
+
+.loading {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--body-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--zi-header);
+    transition: visibility 0.5s, opacity 0.5s;
+}
+
+.loading__logo {
+    width: 10%;
+    fill: var(--first-color);
+    animation: load 1s infinite;
+}
+
+@keyframes load {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(15%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @media (min-width: 700px) {

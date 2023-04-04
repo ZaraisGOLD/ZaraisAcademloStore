@@ -31,7 +31,7 @@ function handleNavbar() {
 function handleDarkMode() {
     const iconDarkMode = document.querySelector('.bx-moon');
     const iconLightMode = document.querySelector('.bx-sun');
-    
+
     iconDarkMode.addEventListener('click', function () {
         if (document.body.classList.toggle('dark__mode')) {
             const iconAdd = document.getElementById("add");
@@ -288,6 +288,13 @@ function handleFilters() {
         }
     });
 }
+
+setTimeout(function () {
+    const loadingHTML = document.querySelector('.loading');
+    loadingHTML.style.visibility = 'hidden';
+    loadingHTML.style.opacity = '0';
+}, 1500);
+
 
 async function main() {
     const dataBase = {
